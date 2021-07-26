@@ -7,7 +7,7 @@ on:
 jobs:
   env_vars:
    runs-on: ubuntu-latest
-  # if: ${{ github.event.workflow_run.conclusion == 'success' }}
+   if: ${{ github.event.workflow_run.conclusion == 'success' }}
    env: 
      GITHUB_CONTEXT: ${{ toJSON(github) }}
    steps:
