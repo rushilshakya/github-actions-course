@@ -1,11 +1,13 @@
 name: Expressions 2
-on: push 
+on:
+  workflow_run:
+    workflows: ["Expressions 1"]
+    types: [completed]
 
 jobs:
   env_vars:
    runs-on: ubuntu-latest
-   needs:
-     - print_variables
+   if: ${{ github.event.workflow_run.conclusion == 'success' }}
    env: 
      GITHUB_CONTEXT: ${{ toJSON(github) }}
    steps:
