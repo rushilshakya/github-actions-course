@@ -8,8 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: double curly
-        run: echo ${{ github.workflow }}
+        run: |
+          echo ${{ github.workflow }}
+          echo "${{ github.workflow }}"
       - name: single curly
-        run: echo ${GITHUB_WORKFLOW}
+        run: |
+          echo ${GITHUB_WORKFLOW}
+          echo "${GITHUB_WORKFLOW}"
       - name: no curly
-        run: echo $GITHUB_WORKFLOW
+        run: |
+          echo $GITHUB_WORKFLOW
+          echo "$GITHUB_WORKFLOW"
