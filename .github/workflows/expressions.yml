@@ -4,6 +4,7 @@ on: push
 jobs:
   print_variables:
     runs-on: ubuntu-latest
+    if: (!always())
     steps:
       - name: double curly
         run: |
@@ -26,3 +27,5 @@ jobs:
        run: echo $GITHUB_CONTEXT
      - name: run single curly
        run: echo ${GITHUB_CONTEXT}
+     - name: run double cury
+       run: echo ${{GITHUB_CONTEXT}}  
