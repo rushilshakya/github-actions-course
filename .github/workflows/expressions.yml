@@ -1,0 +1,15 @@
+name: ENV Variables 
+on: push 
+env: 
+  WF_ENV: Available to all jobs 
+
+jobs:
+  print_variables:
+    runs-on: ubuntu-latest
+    steps:
+      - name: double curly
+        run: echo ${{ github.workflow }}
+      - name: single curly
+        run: echo ${GITHUB_WORKFLOW}
+      - name: no curly
+        run: echo $GITHUB_WORKFLOW
