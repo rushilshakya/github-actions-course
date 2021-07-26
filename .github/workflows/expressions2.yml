@@ -2,7 +2,7 @@ name: Expressions 2
 on:
   workflow_run:
     workflows: ["Expressions 1"]
-    branches: [Expressions]
+    branches: [expressions]
     types: [completed]
 
 jobs:
