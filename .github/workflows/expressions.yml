@@ -27,4 +27,4 @@ jobs:
      - name: run single curly
        run: echo ${GITHUB_CONTEXT}
      - name: run double cury
-       run: echo ${{GITHUB_CONTEXT}}  
+       run: echo ${{ GITHUB_CONTEXT }}  
