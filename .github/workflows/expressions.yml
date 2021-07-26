@@ -1,7 +1,5 @@
 name: ENV Variables 
 on: push 
-env: 
-  WF_ENV: Available to all jobs 
 
 jobs:
   print_variables:
@@ -19,3 +17,11 @@ jobs:
         run: |
           echo $GITHUB_WORKFLOW
           echo "$GITHUB_WORKFLOW"
+  env_vars:
+   runs-on: ubuntu-latest
+   steps:
+     - name: run context
+       env: 
+        GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo $GITHUB_CONTEXT
+     - run: echo ${GITHUB_CONTEXT}
