@@ -4,7 +4,7 @@ on: push
 jobs:
   print_variables:
     runs-on: ubuntu-latest
-    if: (!always())
+    if: failure()
     steps:
       - name: double curly
         run: |
