@@ -12,6 +12,9 @@ jobs:
    env: 
      GITHUB_CONTEXT: ${{ toJSON(github) }}
    steps:
+     - uses: actions/checkout@v2
+       with:
+          ref: ${{ github.event.workflow_run.head_branch }}
      - name: run no curly
        run: echo $GITHUB_CONTEXT
      - name: run single curly
