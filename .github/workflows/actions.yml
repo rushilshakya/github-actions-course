@@ -10,6 +10,7 @@ jobs:
         with:
           repository: rushilshakya/actions@v1
           path: actions/
+          ref: main
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
       - run: npm ci
       - uses: ./.github/actions/hello
