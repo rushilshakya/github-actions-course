@@ -1,0 +1,12 @@
+on: push
+jobs:
+  testing-action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm ci
+      - uses: ./github/actions/hello
+        id: runAction
+        with:
+          who-to-greet: rushil
+      - run: echo "${{ steps.runAction.outputs.time }}"
