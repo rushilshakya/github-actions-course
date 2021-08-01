@@ -8,7 +8,7 @@ jobs:
       - name: checkout private actions repo
         uses: actions/checkout@v2
         with:
-          repository: rushilshakya/actions
+          repository: rushilshakya/actions@v1
           path: actions/
       - run: npm ci
       - uses: ./.github/actions/hello
