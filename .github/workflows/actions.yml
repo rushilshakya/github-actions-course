@@ -1,26 +1,16 @@
+name: internal actions
 on: push
+
 jobs:
   testing-action:
     runs-on: ubuntu-latest
     steps:
       - name: checkout this repo
         uses: actions/checkout@v2
-      - name: checkout private actions repo
-        uses: actions/checkout@v2
-        with:
-          repository: rushilshakya/actions
-          path: actions/
-          ref: v1
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      - run: npm ci
       - uses: ./.github/actions/hello
         name: action in repo
         id: runAction
         with:
           who-to-greet: rushil
       - run: echo "${{ steps.runAction.outputs.time }}"
-      - uses: ./actions/.github/actions/hello
-        name: action from external repo
-        id: runActionOutside
-        with:
-          who-to-greet: outside rushil
-      - run: echo "${{ steps.runActionOutside.outputs.time }}"
