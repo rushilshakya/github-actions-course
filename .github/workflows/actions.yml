@@ -8,9 +8,9 @@ jobs:
       - name: checkout private actions repo
         uses: actions/checkout@v2
         with:
-          repository: rushilshakya/actions@v1
+          repository: rushilshakya/actions
           path: actions/
-          ref: main
+          ref: v1
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
       - run: npm ci
       - uses: ./.github/actions/hello
