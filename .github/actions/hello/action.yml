@@ -1,0 +1,14 @@
+name: Hello world
+author: rushil
+description: say Hello
+inputs:
+  who-to-greet:
+    description: who to greet
+    required: true
+    default: rushil
+outputs:
+  time:
+    description: time of action execution
+runs:
+  using: node12
+  main: index.js
