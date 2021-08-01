@@ -12,7 +12,6 @@ jobs:
           path: actions/
           ref: v1
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-      - run: npm ci
       - uses: ./.github/actions/hello
         name: action in repo
         id: runAction
