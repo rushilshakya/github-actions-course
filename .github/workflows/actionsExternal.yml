@@ -13,7 +13,7 @@ jobs:
           ref: dist
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
       - uses: ./actions/hello
-        name: action from external repo
+        name: action from external private repo
         id: runActionOutside
         with:
           who-to-greet: outside rushil
