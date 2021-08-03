@@ -16,5 +16,5 @@ jobs:
         name: action from external private repo
         id: runActionOutside
         with:
-          who-to-greet: rushil still on v1
+          who-to-greet: rushil of v1
       - run: echo "${{ steps.runActionOutside.outputs.time }}"
