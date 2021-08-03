@@ -10,7 +10,7 @@ jobs:
         with:
           repository: rushilshakya/actions
           path: actions/
-          ref: v1
+          ref: v2
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
       - uses: ./actions/hello
         name: action from external private repo
